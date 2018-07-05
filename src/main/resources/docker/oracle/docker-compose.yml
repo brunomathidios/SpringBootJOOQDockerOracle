@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  sample_oracle:
+    container_name: sample_oracle
+    image: sath89/oracle-xe-11g
+    restart: always
+    ports:
+      - '1521:1521'
+    environment:
+      - ORACLE_ROOT_PASSWORD=sample123
+      - ORACLE_DATABASE=sample
+      - ORACLE_USER=sample
+      - ORACLE_PASSWORD=sample
+    volumes:
+      - "./init:/docker-entrypoint-initdb.d"

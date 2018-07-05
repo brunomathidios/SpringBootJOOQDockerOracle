@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.6.0.xsd">
+  <!-- Configure the database connection here -->
+  <jdbc>
+    <driver>oracle.jdbc.OracleDriver</driver>
+    <url>jdbc:oracle:thin:@127.0.0.1:1521:xe</url>
+    <user>SAMPLE</user>
+    <password>SAMPLE</password>
+  </jdbc>
+
+  <generator>
+  	<name>org.jooq.codegen.JavaGenerator</name>
+  	<generate>
+        <javaTimeTypes>true</javaTimeTypes>
+    </generate>
+    
+    <database>
+      <name>org.jooq.meta.oracle.OracleDatabase</name>
+      <inputSchema>SAMPLE</inputSchema>
+      <includes>.*</includes>
+      <excludes></excludes>
+    </database>
+
+    <target>
+        <packageName>br.com.mathidios.springboot.jooq.docker.oracle.model.jooq</packageName>
+        <directory>../../../src/main/java</directory>
+    </target>
+  </generator>
+</configuration>
